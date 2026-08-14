@@ -1,6 +1,13 @@
 @import "tailwindcss";
 @import "tw-animate-css";
 
+/*
+ * Direção visual: reprodução do PSD [BOSQUEDOSPINHEIROS]LP-1.psd.
+ * Preservar escala 1400x6235, terracota Bosque (#7b2918), verde-musgo (#263116),
+ * textura editorial e continuidade vertical; estilos abaixo são a camada
+ * funcional e responsiva sobre a arte consolidada.
+ */
+
 @custom-variant dark (&:is(.dark *));
 
 @theme inline {
@@ -174,4 +181,191 @@
       max-width: 1280px; /* Standard content width */
     }
   }
+}
+
+html {
+  background: #1f0803;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  background: #1f0803;
+  color: #f7ead7;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+.lp-page {
+  width: 100%;
+  overflow-x: hidden;
+  background: #1f0803;
+}
+
+.lp-stage {
+  position: relative;
+  width: min(1400px, 100vw);
+  margin-inline: auto;
+  container-type: inline-size;
+  isolation: isolate;
+}
+
+.lp-artwork {
+  display: block;
+  width: 100%;
+  height: auto;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.lead-form,
+.hotspot {
+  position: absolute;
+  z-index: 2;
+}
+
+.lead-form {
+  display: block;
+  color: #22140f;
+}
+
+.lead-form input,
+.lead-form button {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  min-width: 0;
+  border: 0;
+  border-radius: 0;
+  outline: 0;
+}
+
+.lead-form input {
+  height: 14.3%;
+  background: transparent;
+  color: #302016;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 1.05cqw;
+  line-height: 1;
+  padding: 0 1.2cqw;
+}
+
+.lead-form input:nth-of-type(1) { top: 6.4%; }
+.lead-form input:nth-of-type(2) { top: 31.5%; }
+.lead-form input:nth-of-type(3) { top: 57.4%; }
+
+.lead-form input:focus {
+  box-shadow: inset 0 0 0 0.18cqw rgba(114, 55, 25, 0.85);
+}
+
+.lead-form button {
+  top: 82.2%;
+  height: 17.8%;
+  background: transparent;
+  cursor: pointer;
+  transition: filter 180ms ease, transform 180ms ease;
+}
+
+.lead-form button:hover,
+.lead-form button:focus-visible {
+  filter: brightness(1.12);
+  outline: 0.18cqw solid rgba(247, 234, 215, 0.95);
+  outline-offset: 0.18cqw;
+}
+
+.lead-form button:active {
+  transform: scale(0.985);
+}
+
+.lead-form--top {
+  left: 5.2857%;
+  top: 11.1419%;
+  width: 37.0714%;
+  height: 5.5052%;
+}
+
+.lead-form--bottom {
+  left: 57.7857%;
+  top: 80.3384%;
+  width: 37%;
+  height: 5.5533%;
+}
+
+.form-status {
+  position: absolute;
+  top: 103%;
+  left: 0;
+  width: 100%;
+  margin: 0;
+  color: #f7ead7;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.95cqw;
+  line-height: 1.2;
+  text-align: center;
+  text-shadow: 0 0.1em 0.3em rgba(0, 0, 0, 0.45);
+}
+
+.hotspot {
+  display: block;
+  cursor: pointer;
+}
+
+.hotspot--top-cta {
+  left: 13.5%;
+  top: 15.7%;
+  width: 28.9%;
+  height: 1.05%;
+}
+
+.hotspot--bottom-cta {
+  left: 66%;
+  top: 84.63%;
+  width: 28.9%;
+  height: 1.05%;
+}
+
+.hotspot--footer-whatsapp {
+  left: 62.85%;
+  top: 98.03%;
+  width: 11.4%;
+  height: 0.48%;
+}
+
+.hotspot--footer-instagram {
+  left: 76.4%;
+  top: 97.99%;
+  width: 18%;
+  height: 0.43%;
+}
+
+.hotspot:focus-visible {
+  outline: 0.26cqw solid #f7ead7;
+  outline-offset: 0.26cqw;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 640px) {
+  .lead-form input { font-size: max(10px, 1.05cqw); }
+  .form-status { font-size: max(10px, 0.95cqw); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .lead-form button { transition: none; }
 }
