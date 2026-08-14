@@ -32,12 +32,8 @@ function LeadForm({ className, buttonLabel, location }: LeadFormProps) {
     ].join("\n");
 
     setSubmitted(true);
-    window.open(
-      `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`,
-      "_blank",
-      "noopener,noreferrer",
-    );
-    window.setTimeout(() => setSubmitted(false), 2800);
+    const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+    window.setTimeout(() => window.location.assign(whatsappUrl), 120);
   }
 
   return (

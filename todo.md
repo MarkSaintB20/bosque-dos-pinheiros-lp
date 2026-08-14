@@ -16,3 +16,15 @@
 - [x] Recortar o símbolo original e gerar favicon otimizado.
 - [x] Integrar favicon e apple-touch-icon no HTML.
 - [x] Validar os arquivos publicados e salvar checkpoint.
+
+## Validação em modo escuro
+
+- [x] Testar favicon e apple-touch-icon em dark mode.
+- [x] Testar OG Image e metadados em dark mode no desktop e mobile.
+- [x] Registrar resultado e corrigir se houver falha de contraste ou carregamento.
+
+## Redirecionamento dos formulários para WhatsApp
+
+- [x] Confirmar o número internacional e a mensagem pré-preenchida.
+- [x] Ajustar os dois formulários para abrir o WhatsApp com os dados enviados.
+- [x] Validar o fluxo em desktop e mobile e salvar checkpoint.
