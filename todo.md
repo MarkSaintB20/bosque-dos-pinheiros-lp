@@ -10,3 +10,9 @@
 - [x] Confirmar resposta pública da URL da OG Image sem bloqueio ou redirecionamento incompatível.
 - [x] Ajustar os metadados para usar uma URL pública final e rastreável.
 - [x] Validar o HTML publicado e orientar a atualização do cache da prévia.
+
+## Atualização do favicon
+
+- [x] Recortar o símbolo original e gerar favicon otimizado.
+- [x] Integrar favicon e apple-touch-icon no HTML.
+- [x] Validar os arquivos publicados e salvar checkpoint.
