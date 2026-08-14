@@ -28,3 +28,10 @@
 - [x] Confirmar o número internacional e a mensagem pré-preenchida.
 - [x] Ajustar os dois formulários para abrir o WhatsApp com os dados enviados.
 - [x] Validar o fluxo em desktop e mobile e salvar checkpoint.
+
+## Deploy na Cloudflare
+
+- [x] Inspecionar a conta e as ferramentas Cloudflare disponíveis.
+- [x] Preparar o build estático para publicação.
+- [x] Publicar e validar a URL, HTML e assets no domínio Cloudflare.
+- [x] Atualizar URLs absolutas de OG Image e canonical para o domínio Cloudflare.
