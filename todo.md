@@ -35,3 +35,9 @@
 - [x] Preparar o build estático para publicação.
 - [x] Publicar e validar a URL, HTML e assets no domínio Cloudflare.
 - [x] Atualizar URLs absolutas de OG Image e canonical para o domínio Cloudflare.
+
+## Atualização do título da hero
+
+- [x] Confirmar o texto e a quebra editorial em três linhas.
+- [x] Atualizar a arte principal mantendo tipografia e estrutura originais.
+- [x] Validar desktop e mobile e publicar a revisão.

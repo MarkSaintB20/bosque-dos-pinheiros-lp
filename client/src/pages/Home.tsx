@@ -6,7 +6,7 @@ import { FormEvent, useState } from "react";
  * HTML fornece acessibilidade, navegação e comportamento aos pontos de CTA.
  */
 
-const artwork = "/manus-storage/bosque-dos-pinheiros-lp_24ee0398.png";
+const artwork = "/manus-storage/bosque-dos-pinheiros-lp-headline-updated_193ac01d.png";
 const whatsappNumber = "5512996268245";
 
 type LeadFormProps = {
@@ -60,7 +60,7 @@ export default function Home() {
   return (
     <main className="lp-page">
       <div className="sr-only">
-        <h1>Bosque dos Pinheiros: onde a vida moderna encontrou mais espaço para respirar</h1>
+        <h1>Bosque dos Pinheiros: onde a vida moderna encontra mais espaço para respirar</h1>
         <p>Uma nova forma de viver chegou em Guaratinguetá. Um bairro planejado para natureza, mobilidade e qualidade de vida.</p>
         <section aria-labelledby="respirar-heading">
           <h2 id="respirar-heading">Respirar também é viver melhor</h2>
