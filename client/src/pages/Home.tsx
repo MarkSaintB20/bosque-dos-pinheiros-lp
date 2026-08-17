@@ -6,7 +6,7 @@ import { FormEvent, useState } from "react";
  * HTML fornece acessibilidade, navegação e comportamento aos pontos de CTA.
  */
 
-const artwork = "/manus-storage/bosque-dos-pinheiros-lp-headline-updated_193ac01d.png";
+const artwork = "https://bosque-dos-pinheiros-lp.pages.dev/bosque-dos-pinheiros-lp.png";
 const whatsappNumber = "5512996268245";
 
 type LeadFormProps = {

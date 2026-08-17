@@ -41,3 +41,10 @@
 - [x] Confirmar o texto e a quebra editorial em três linhas.
 - [x] Atualizar a arte principal mantendo tipografia e estrutura originais.
 - [x] Validar desktop e mobile e publicar a revisão.
+
+## Pacote portátil para o cliente
+
+- [x] Remover a dependência de `/manus-storage/` da distribuição estática.
+- [x] Incluir a arte principal, favicon e OG Image no pacote final.
+- [x] Validar o pacote em servidor estático independente.
+- [x] Gerar arquivo ZIP e instruções de publicação para o cliente.
