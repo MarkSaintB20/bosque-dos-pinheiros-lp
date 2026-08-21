@@ -8,6 +8,7 @@ import { FormEvent, useState } from "react";
 
 const artwork = "https://bosque-dos-pinheiros-lp.pages.dev/bosque-dos-pinheiros-lp.png";
 const whatsappNumber = "5512996268245";
+const webhookUrl = "https://webhook-eggs.ackhub.app/webhook/036515a2-8ea0-47df-95d7-51ad52a1ddcb-bosque-dos-pinheiros-lp";
 
 type LeadFormProps = {
   className: string;
@@ -18,12 +19,23 @@ type LeadFormProps = {
 function LeadForm({ className, buttonLabel, location }: LeadFormProps) {
   const [submitted, setSubmitted] = useState(false);
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    if (submitted) return;
+
     const data = new FormData(event.currentTarget);
     const name = String(data.get("name") ?? "").trim();
     const email = String(data.get("email") ?? "").trim();
     const phone = String(data.get("phone") ?? "").trim();
+    const leadPayload = {
+      name,
+      email,
+      phone,
+      project: "Bosque dos Pinheiros",
+      formLocation: location,
+      submittedAt: new Date().toISOString(),
+      pageUrl: window.location.href,
+    };
     const message = [
       "Olá! Quero saber mais sobre o Bosque dos Pinheiros.",
       `Nome: ${name}`,
@@ -33,7 +45,21 @@ function LeadForm({ className, buttonLabel, location }: LeadFormProps) {
 
     setSubmitted(true);
     const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-    window.setTimeout(() => window.location.assign(whatsappUrl), 120);
+
+    const isCorsConfigured = window.location.origin === "https://bosque-dos-pinheiros-lp.pages.dev";
+    try {
+      await fetch(webhookUrl, {
+        method: "POST",
+        mode: isCorsConfigured ? "cors" : "no-cors",
+        headers: isCorsConfigured ? { "Content-Type": "application/json" } : { "Content-Type": "text/plain;charset=UTF-8" },
+        body: JSON.stringify(leadPayload),
+        keepalive: true,
+      });
+    } catch {
+      // O redirecionamento ao WhatsApp segue disponível mesmo se o endpoint estiver indisponível.
+    }
+
+    window.location.assign(whatsappUrl);
   }
 
   return (
@@ -47,7 +73,7 @@ function LeadForm({ className, buttonLabel, location }: LeadFormProps) {
       <button type="submit" aria-label={submitted ? "Mensagem preparada" : buttonLabel}>
         <span className="sr-only">{submitted ? "Mensagem preparada" : buttonLabel}</span>
       </button>
-      {submitted && <p className="form-status" role="status">Abrindo seu atendimento no WhatsApp.</p>}
+      {submitted && <p className="form-status" role="status">Enviando seus dados e abrindo o atendimento no WhatsApp.</p>}
     </form>
   );
 }

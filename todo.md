@@ -48,3 +48,15 @@
 - [x] Incluir a arte principal, favicon e OG Image no pacote final.
 - [x] Validar o pacote em servidor estático independente.
 - [x] Gerar arquivo ZIP e instruções de publicação para o cliente.
+
+## Integração de webhook dos formulários
+
+- [ ] Verificar a compatibilidade CORS e o formato de requisição do endpoint.
+- [ ] Enviar os dados dos dois formulários ao webhook antes de abrir o WhatsApp.
+- [ ] Validar o fluxo sem registrar leads de teste no endpoint.
+
+## ZIP do projeto-fonte completo
+
+- [x] Montar o arquivo-fonte sem dependências reconstruíveis e caches locais.
+- [x] Incluir instruções de instalação, build e publicação.
+- [x] Validar o conteúdo do ZIP e entregar junto ao pacote estático.
